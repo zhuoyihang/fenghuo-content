@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川丰火传媒内容营销案例</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #0d0d1a;
+            color: #333;
+            line-height: 1.6;
+        }
+        .slide {
+            width: 100%; max-width: 1200px; margin: 40px auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px; padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            min-height: 675px; position: relative; overflow: hidden;
+        }
+        .slide::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, #d4af37, #f4d03f, #d4af37);
+        }
+        h1 { font-size: 44px; color: #1a1a2e; text-align: center; margin-bottom: 30px; font-weight: 700; }
+        h2 { font-size: 32px; color: #1a1a2e; margin: 25px 0 18px; border-left: 5px solid #d4af37; padding-left: 18px; }
+        h3 { font-size: 20px; color: #333; margin: 18px 0 10px; }
+
+        /* 封面 */
+        .cover {
+            text-align: center; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; min-height: 555px;
+        }
+        .cover h1 {
+            font-size: 64px;
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            margin-bottom: 20px; line-height: 1.3;
+        }
+        .cover .subtitle { font-size: 26px; color: #666; margin-top: 15px; }
+        .cover .tagline {
+            margin-top: 35px; font-size: 18px; color: #999;
+            letter-spacing: 6px; text-transform: uppercase;
+        }
+
+        /* 目录 */
+        .toc { display: flex; flex-direction: column; gap: 20px; max-width: 850px; margin: 0 auto; }
+        .toc-item {
+            display: flex; align-items: center; padding: 22px 30px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            border-radius: 14px; color: #fff; transition: transform 0.3s;
+        }
+        .toc-item:hover { transform: translateX(10px); }
+        .toc-number {
+            width: 52px; height: 52px; background: #d4af37; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; font-weight: bold; color: #1a1a2e; margin-right: 22px; flex-shrink: 0;
+        }
+        .toc-text { font-size: 22px; }
+        .toc-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+        /* 分隔页 */
+        .section-title {
+            text-align: center; font-size: 42px; color: #1a1a2e;
+            margin-top: 180px; position: relative;
+        }
+        .section-subtitle {
+            text-align: center; font-size: 18px; color: #999; margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        .section-badge {
+            display: inline-block; background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: #1a1a2e; padding: 6px 24px; border-radius: 25px;
+            font-size: 14px; font-weight: 700; margin-top: 20px; letter-spacing: 2px;
+        }
+
+        /* 通用卡片 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 25px 0; }
+        .card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s; border: 1px solid rgba(212,175,55,0.1);
+        }
+        .card:hover { transform: translateY(-5px); }
+        .stat { font-size: 44px; font-weight: bold; color: #d4af37; }
+        .stat-label { font-size: 16px; color: #666; margin-top: 8px; }
+
+        /* 深色案例卡 */
+        .case-study {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            border-radius: 20px; padding: 35px; color: #fff; margin: 20px 0;
+        }
+        .case-title { font-size: 26px; color: #d4af37; margin-bottom: 15px; }
+        .case-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 18px 0; }
+        .case-stat { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 18px; text-align: center; }
+        .case-stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+        .case-stat-value { font-size: 26px; font-weight: bold; color: #d4af37; }
+        .case-highlight {
+            background: rgba(212, 175, 55, 0.15); border-left: 4px solid #d4af37;
+            padding: 14px; border-radius: 0 12px 12px 0; margin-top: 14px; font-size: 14px; color: rgba(255,255,255,0.85);
+        }
+
+        /* 紧凑案例 */
+        .case-compact {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            border-radius: 14px; padding: 18px 22px; color: #fff; margin: 10px 0;
+        }
+        .case-compact-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+        }
+        .case-compact-name { font-size: 20px; color: #d4af37; font-weight: 700; }
+        .case-compact-type { font-size: 12px; background: rgba(212,175,55,0.3); padding: 3px 12px; border-radius: 20px; color: #f4d03f; }
+        .case-compact-stats { display: flex; gap: 25px; flex-wrap: wrap; }
+        .case-compact-stat { text-align: center; }
+        .case-compact-stat .val { font-size: 22px; font-weight: bold; color: #d4af37; }
+        .case-compact-stat .lbl { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+        /* 信息板块 */
+        .brief-case {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 20px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .info-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 14px; padding: 22px; margin: 12px 0;
+        }
+        .info-title {
+            font-size: 18px; color: #1a1a2e; margin-bottom: 10px;
+            display: flex; align-items: center; gap: 10px; font-weight: 700;
+        }
+        .info-title::before {
+            content: ''; width: 4px; height: 20px; background: #d4af37; border-radius: 2px; flex-shrink: 0;
+        }
+        .info-list { list-style: none; padding: 0; }
+        .info-list li {
+            padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; align-items: flex-start; gap: 10px; font-size: 15px;
+        }
+        .info-list li::before { content: '•'; color: #d4af37; font-weight: bold; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+        .tag {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #fff; padding: 6px 16px; border-radius: 25px; font-size: 13px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            border-radius: 14px; padding: 22px; color: #1a1a2e; margin: 18px 0;
+        }
+        .formula {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #fff; padding: 28px; border-radius: 14px; text-align: center;
+            font-size: 22px; margin: 25px 0;
+        }
+        .formula-highlight { color: #d4af37; font-weight: bold; font-size: 28px; }
+
+        /* 流程步骤 */
+        .process-step {
+            display: flex; align-items: center; gap: 18px; padding: 22px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px; margin: 12px 0;
+        }
+        .step-number {
+            width: 48px; height: 48px; background: #d4af37; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; font-weight: bold; color: #1a1a2e; flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .step-title { font-size: 18px; color: #1a1a2e; margin-bottom: 4px; font-weight: 700; }
+        .step-desc { font-size: 15px; color: #666; }
+
+        /* 蓝V板块 */
+        .bluev-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 22px 0;
+        }
+        .bluev-card {
+            background: #fff; border-radius: 14px; overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: transform 0.3s;
+            border: 2px solid #f0e6c8;
+        }
+        .bluev-card:hover { transform: translateY(-5px); }
+        .bluev-card img {
+            width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block;
+        }
+        .bluev-card .bluev-label {
+            padding: 10px 14px; text-align: center; font-size: 15px;
+            font-weight: 600; color: #1a1a2e; background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+        }
+
+        /* 全案运营清单 */
+        .service-list { margin: 22px 0; }
+        .service-item {
+            display: flex; gap: 18px; padding: 18px; margin: 10px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 14px; border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .service-icon {
+            width: 52px; height: 52px; background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 22px; flex-shrink: 0;
+        }
+        .service-content { flex: 1; }
+        .service-name { font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 5px; }
+        .service-desc { font-size: 14px; color: #666; line-height: 1.6; }
+        .service-sub { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+        .service-sub span {
+            background: rgba(212,175,55,0.12); color: #8b7530; padding: 3px 10px;
+            border-radius: 20px; font-size: 12px;
+        }
+
+        /* 视频板块 */
+        .video-container {
+            border-radius: 14px; overflow: hidden; margin: 22px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12); background: #000;
+        }
+        .video-container video { width: 100%; display: block; border-radius: 14px; }
+        .video-caption {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: #fff; padding: 16px 22px; text-align: center;
+            font-size: 16px; border-radius: 0 0 14px 14px;
+        }
+        .video-caption .brand-name { color: #d4af37; font-weight: 700; }
+
+        /* 平台能力卡片 - 三大平台 */
+        .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin: 30px 0; }
+        .platform-card {
+            border-radius: 18px; padding: 30px 22px; text-align: center;
+            color: #fff; transition: transform 0.3s; position: relative; overflow: hidden;
+        }
+        .platform-card:hover { transform: translateY(-6px); }
+        .platform-card.xhs {
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b81 100%);
+        }
+        .platform-card.douyin {
+            background: linear-gradient(135deg, #1a1a2e 0%, #3a3a5c 100%);
+        }
+        .platform-card.dianping {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffb347 100%);
+        }
+        .platform-icon { font-size: 42px; margin-bottom: 15px; }
+        .platform-name { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+        .platform-desc { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+        .platform-features {
+            margin-top: 15px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+        }
+        .platform-features span {
+            background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* 品牌墙 */
+        .brand-wall {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 25px 0;
+        }
+        .brand-wall-img {
+            border-radius: 14px; overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 2px solid rgba(212,175,55,0.15);
+        }
+        .brand-wall-img img {
+            width: 100%; display: block;
+        }
+
+        /* 爆文案例表格 */
+        .hot-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border-radius: 14px; overflow: hidden; font-size: 14px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .hot-table thead th {
+            background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+            color: #fff; padding: 14px 12px; font-weight: 600;
+            text-align: center; font-size: 14px;
+        }
+        .hot-table thead th:first-child { text-align: left; padding-left: 18px; }
+        .hot-table tbody td {
+            padding: 12px; border-bottom: 1px solid #f0f0f0;
+            text-align: center; vertical-align: middle;
+        }
+        .hot-table tbody td:first-child { text-align: left; padding-left: 18px; }
+        .hot-table tbody tr:last-child td { border-bottom: none; }
+        .hot-table tbody tr:hover { background: #fffdf0; }
+        .hot-title {
+            display: inline-block; max-width: 320px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            color: #1a1a2e; text-decoration: none; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .hot-title:hover { color: #d4af37; }
+        .hot-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%;
+            font-size: 13px; font-weight: 700; margin-right: 10px;
+            flex-shrink: 0; color: #fff;
+        }
+        .hot-num.top3 { background: linear-gradient(135deg, #d4af37, #f4d03f); color: #1a1a2e; }
+        .hot-num.normal { background: #e9ecef; color: #666; }
+        /* 点赞色阶 */
+        .like-cell { font-weight: 700; border-radius: 6px; padding: 4px 8px; display: inline-block; }
+        .like-super { background: linear-gradient(135deg, #ff2442, #ff6b81); color: #fff; }
+        .like-high { background: linear-gradient(135deg, #ff8c00, #ffb347); color: #fff; }
+        .like-mid { background: linear-gradient(135deg, #d4af37, #f4d03f); color: #1a1a2e; }
+        .like-low { background: #e9ecef; color: #666; }
+
+        /* 全局水印 - 右下角签名 */
+        .slide::after {
+            content: '四川丰火传媒';
+            position: absolute;
+            bottom: 18px; right: 24px;
+            pointer-events: none;
+            font-size: 13px;
+            color: rgba(212, 175, 55, 0.15);
+            font-weight: 700;
+            letter-spacing: 4px;
+            white-space: nowrap;
+            z-index: 2;
+        }
+        /* 每个slide右下角水印 */
+        .slide > .watermark-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .slide > .watermark-layer::before {
+            content: '四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  四川丰火传媒  ';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 6px;
+            color: rgba(212, 175, 55, 0.055);
+            transform: rotate(-28deg);
+            line-height: 2.2;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* 电脑阅读提醒条 */
+        .device-tip {
+            max-width: 1200px; margin: 15px auto 0;
+            background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+            border-radius: 10px; padding: 12px 24px;
+            display: flex; align-items: center; gap: 12px;
+            color: rgba(255,255,255,0.85); font-size: 14px;
+        }
+        .device-tip-icon { font-size: 20px; }
+        .device-tip a { color: #d4af37; text-decoration: underline; }
+
+        /* 点击跳转提醒 */
+        .click-tip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b81 100%);
+            color: #fff; padding: 5px 14px; border-radius: 20px;
+            font-size: 13px; font-weight: 600; margin-left: 10px;
+            animation: pulse-tip 2s ease-in-out infinite;
+        }
+        @keyframes pulse-tip {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* 方法论矩阵 */
+        .method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+        .method-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 14px; padding: 22px; border: 1px solid rgba(212,175,55,0.15);
+            position: relative;
+        }
+        .method-num {
+            position: absolute; top: -10px; left: 18px; background: #d4af37;
+            color: #1a1a2e; width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: bold;
+        }
+        .method-name { font-size: 18px; font-weight: 700; color: #1a1a2e; margin: 8px 0 6px; }
+        .method-desc { font-size: 14px; color: #666; line-height: 1.5; }
+
+        /* 数据对比条 */
+        .data-bar { margin: 12px 0; }
+        .data-bar-label { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+        .data-bar-track { background: #e9ecef; border-radius: 8px; height: 12px; overflow: hidden; }
+        .data-bar-fill {
+            height: 100%; border-radius: 8px;
+            background: linear-gradient(90deg, #d4af37, #f4d03f);
+            transition: width 1s ease;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center; margin-top: 50px; padding-top: 25px;
+            border-top: 2px solid #e9ecef; color: #666; font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .slide { padding: 30px; margin: 20px; }
+            h1 { font-size: 32px; }
+            h2 { font-size: 26px; }
+            .case-stats { grid-template-columns: repeat(2, 1fr); }
+            .bluev-grid { grid-template-columns: repeat(2, 1fr); }
+            .platform-grid { grid-template-columns: 1fr; }
+            .method-grid { grid-template-columns: 1fr; }
+            .case-compact-stats { gap: 12px; }
+            .cover h1 { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 电脑阅读提醒 -->
+<div class="device-tip">
+    <span class="device-tip-icon">💻</span>
+    <span>建议使用<strong>电脑浏览器</strong>阅读本页面，获得最佳浏览体验。手机端部分内容可能显示不全。</span>
+</div>
+
+<!-- ==================== 封面 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <div class="cover">
+        <h1>四川丰火传媒<br>内容营销案例</h1>
+        <p class="subtitle">小红书 · 抖音视频 · 大众点评·点星</p>
+        <p class="tagline">CONTENT MARKETING CASES</p>
+    </div>
+</div>
+
+<!-- ==================== 目录 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h1>目 录</h1>
+    <div class="toc">
+        <div class="toc-item">
+            <span class="toc-number">01</span>
+            <div>
+                <div class="toc-text">小红书营销</div>
+                <div class="toc-sub">蓝V运营 · 达人种草 · 全案运营清单 · Brief策划</div>
+            </div>
+        </div>
+        <div class="toc-item">
+            <span class="toc-number">02</span>
+            <div>
+                <div class="toc-text">抖音视频营销</div>
+                <div class="toc-sub">达人探店 · 短视频创作 · 本地生活投流</div>
+            </div>
+        </div>
+        <div class="toc-item">
+            <span class="toc-number">03</span>
+            <div>
+                <div class="toc-text">大众点评·点星</div>
+                <div class="toc-sub">智投笔记 · 履约流程 · 合作案例数据</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 三大平台总览 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>三大平台 · 一站式内容营销</h2>
+    <p style="color:#666; margin-bottom:25px; font-size:16px;">四川丰火传媒深耕本地生活内容营销，以小红书种草为阵地、抖音视频为引爆点、大众点评为转化收口，为餐饮品牌构建全链路营销闭环</p>
+    <div class="platform-grid">
+        <div class="platform-card xhs">
+            <div class="platform-icon">📕</div>
+            <div class="platform-name">小红书</div>
+            <div class="platform-desc">种草决策第一入口<br>用户主动搜索、深度阅读<br>长尾流量持续沉淀</div>
+            <div class="platform-features">
+                <span>蓝V运营</span><span>达人种草</span><span>聚光投流</span><span>全案运营</span>
+            </div>
+        </div>
+        <div class="platform-card douyin">
+            <div class="platform-icon">🎵</div>
+            <div class="platform-name">抖音视频</div>
+            <div class="platform-desc">流量爆发最强引擎<br>算法推荐精准触达<br>短视频+直播双驱动</div>
+            <div class="platform-features">
+                <span>达人探店</span><span>短视频创作</span><span>本地生活</span><span>投流放大</span>
+            </div>
+        </div>
+        <div class="platform-card dianping">
+            <div class="platform-icon">⭐</div>
+            <div class="platform-name">大众点评·点星</div>
+            <div class="platform-desc">消费决策终极收口<br>真实评价口碑背书<br>到店转化直接闭环</div>
+            <div class="platform-features">
+                <span>智投笔记</span><span>达人评价</span><span>数据追踪</span><span>到店核销</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 第一部分：小红书 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h1 class="section-title">01 小红书营销</h1>
+    <p class="section-subtitle">XIAOHONGSHU MARKETING</p>
+    <div style="text-align:center;"><span class="section-badge">种草 · 运营 · 转化</span></div>
+</div>
+
+<!-- 小红书为什么重要 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>为什么餐饮品牌必须做小红书？</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="stat">70%</div>
+            <div class="stat-label">用户主动搜索餐饮内容<br>决策前必看小红书</div>
+        </div>
+        <div class="card">
+            <div class="stat">3亿+</div>
+            <div class="stat-label">月活用户<br>高消费力女性占比超7成</div>
+        </div>
+        <div class="card">
+            <div class="stat">180天</div>
+            <div class="stat-label">优质笔记持续获得流量<br>长尾效应远超其他平台</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>💡 核心逻辑</h3>
+        <p>小红书 = <strong>用户主动搜索</strong> × <strong>深度种草阅读</strong> × <strong>长尾流量沉淀</strong><br>
+        用户不是被动刷到，而是带着需求来搜——这意味着每一条笔记都是一条<strong>永久免费的获客通道</strong></p>
+    </div>
+</div>
+
+<!-- 小红书营销方法论 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>丰火小红书营销方法论</h2>
+    <div class="formula">
+        <span class="formula-highlight">KUFS</span> 模型 &nbsp;→&nbsp; KOL引爆 + KOC种草 + Feeds投流 + Search搜索
+    </div>
+    <div class="method-grid">
+        <div class="method-item">
+            <div class="method-num">K</div>
+            <div class="method-name">KOL 引爆声量</div>
+            <div class="method-desc">头部/腰部达人首发种草，快速建立品牌认知，制造话题热度，单篇笔记可获数十万曝光</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">U</div>
+            <div class="method-name">KOC 矩阵种草</div>
+            <div class="method-desc">真实用户+素人博主铺设内容矩阵，低成本高信任度，打造"大家都在吃"的从众效应</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">F</div>
+            <div class="method-name">Feeds 信息流投流</div>
+            <div class="method-desc">聚光精准定向投放，LBS+兴趣标签双重筛选，让笔记出现在目标客群的信息流中</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">S</div>
+            <div class="method-name">Search 搜索占位</div>
+            <div class="method-desc">优化品牌关键词搜索排名，抢占"成都火锅""约会餐厅"等品类词，拦截精准搜索流量</div>
+        </div>
+    </div>
+</div>
+
+<!-- 小红书蓝V合作 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>小红书蓝V品牌合作</h2>
+    <div class="info-section" style="margin-bottom: 22px;">
+        <div class="info-title">蓝V合作价值</div>
+        <p style="font-size:15px;">蓝V认证是品牌在小红书建立官方权威形象的核心方式。通过蓝V账号运营，品牌可实现<strong>内容官方背书、粉丝沉淀、私域转化</strong>，搭配点星投放与全案运营，形成「品牌种草→用户关注→持续转化」的完整闭环。</p>
+    </div>
+    <div class="bluev-grid">
+        <div class="bluev-card">
+            <img src="assets/大董蓝V.jpg" alt="大董蓝V">
+            <div class="bluev-label">大董</div>
+        </div>
+        <div class="bluev-card">
+            <img src="assets/大院河蓝V.jpg" alt="大院河蓝V">
+            <div class="bluev-label">大院河·仙鱼莊</div>
+        </div>
+        <div class="bluev-card">
+            <img src="assets/观锦蓝V.jpg" alt="观锦蓝V">
+            <div class="bluev-label">观锦餐厅</div>
+        </div>
+        <div class="bluev-card">
+            <img src="assets/京祥和轩蓝V.jpg" alt="京祥和轩蓝V">
+            <div class="bluev-label">京祥和轩</div>
+        </div>
+        <div class="bluev-card">
+            <img src="assets/南堂馆蓝V.jpg" alt="南堂馆蓝V">
+            <div class="bluev-label">南堂馆·新川菜</div>
+        </div>
+        <div class="bluev-card">
+            <img src="assets/享月汤皇蓝V.jpg" alt="享月汤皇蓝V">
+            <div class="bluev-label">享月汤皇</div>
+        </div>
+    </div>
+</div>
+
+<!-- 大董视频 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>大董合作内容拍摄实例</h2>
+    <div class="brief-case">
+        <div class="info-section" style="margin-bottom: 18px;">
+            <div class="info-title">合作亮点</div>
+            <p>大董作为高端中餐标杆品牌，与丰火合作进行小红书内容拍摄。通过专业级菜品拍摄、环境氛围营造、消费场景还原，产出高质量种草内容，有效提升品牌在平台上的视觉调性与用户心智。</p>
+        </div>
+        <div class="video-container">
+            <video controls preload="metadata">
+                <source src="assets/大董合作内容拍摄实例.MP4" type="video/mp4">
+                您的浏览器不支持视频播放
+            </video>
+        </div>
+        <div class="video-caption">
+            <span class="brand-name">大董</span> × 四川丰火 ｜ 内容拍摄实例
+        </div>
+    </div>
+</div>
+
+<!-- 全案运营清单 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>小红书全案运营服务清单</h2>
+    <div class="service-list">
+        <div class="service-item">
+            <div class="service-icon">📋</div>
+            <div class="service-content">
+                <div class="service-name">一、账号搭建与诊断</div>
+                <div class="service-desc">深入调研品牌定位与目标客群，诊断当前营销断点，匹配用户画像与标签体系</div>
+                <div class="service-sub">
+                    <span>企业深度调研</span><span>营销断点诊断</span><span>用户画像匹配</span><span>蓝V认证与装修</span>
+                </div>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">✍️</div>
+            <div class="service-content">
+                <div class="service-name">二、内容策划与创作</div>
+                <div class="service-desc">将品牌卖点转化为用户语言，制定阶梯式内容策略，从认知种草到转化引导层层推进</div>
+                <div class="service-sub">
+                    <span>卖点用户语言转化</span><span>阶梯式内容规划</span><span>达人种草与共创</span><span>专业型内容定制</span>
+                </div>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">🎯</div>
+            <div class="service-content">
+                <div class="service-name">三、流量获取与投流优化</div>
+                <div class="service-desc">利用聚光投流精准定向推送，SEO/GEO优化搜索排名，抢占区域与品类关键词</div>
+                <div class="service-sub">
+                    <span>聚光精准投流</span><span>搜索SEO优化</span><span>区域关键词排名</span><span>AI搜索GEO优化</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 全案运营清单续 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>全案运营服务清单（续）</h2>
+    <div class="service-list">
+        <div class="service-item">
+            <div class="service-icon">🛒</div>
+            <div class="service-content">
+                <div class="service-name">四、转化链路搭建</div>
+                <div class="service-desc">打通笔记到下单的完整闭环，小程序/店铺联动，场景化推荐降低决策门槛</div>
+                <div class="service-sub">
+                    <span>小程序/店铺联动</span><span>到店核销优惠券</span><span>场景化关联推荐</span><span>行为激励玩法</span>
+                </div>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">📊</div>
+            <div class="service-content">
+                <div class="service-name">五、数据分析与策略迭代</div>
+                <div class="service-desc">全链路行为数据追踪，转化归因分析，月度运营报告输出，策略动态调整</div>
+                <div class="service-sub">
+                    <span>全链路数据追踪</span><span>转化归因分析</span><span>月度运营报告</span><span>策略动态调整</span>
+                </div>
+            </div>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">🔧</div>
+            <div class="service-content">
+                <div class="service-name">六、Brief策划与执行落地</div>
+                <div class="service-desc">从品牌定位出发制定传播重点，规划话题标签、标题方向、内容形式与拍摄指引，确保达人内容质量</div>
+                <div class="service-sub">
+                    <span>核心传播点提炼</span><span>话题标签规划</span><span>拍摄执行指引</span><span>审稿与发布管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>💡 内容创作核心方法论</h3>
+        <p>优质笔记 = 多维度找点 + 内容沉淀 &nbsp;|&nbsp; 找特色 · 找场景 · 找颜值 · 找爆点 · 找氛围 · 找空间</p>
+    </div>
+</div>
+
+<!-- Brief案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>Brief 策划案例</h2>
+    <div class="brief-case">
+        <div class="info-section">
+            <div class="info-title">Sawasawa洒瓦（西宸店）—— 传播重点</div>
+            <ul class="info-list">
+                <li>核心传播点：成都必吃榜泰餐指南 / 在洒瓦吃漂亮饭 / 约会打卡好去处</li>
+                <li>话题方向：成都泰国菜 / 成都漂亮饭 / 洒瓦漂亮饭指南 / 泰餐就吃洒瓦</li>
+                <li>内容建议：菜品点单测评攻略 + 消费场景打造（闺蜜打卡/约会/生日）</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <div class="info-title">锦燚火锅（象南里店）—— 推广目标</div>
+            <ul class="info-list">
+                <li>借势"春日经济"与"节日节点"，"高颜值环境+硬核鲜切食材"双轮驱动</li>
+                <li>锁定女性及年轻客群，实现节后流量回补与三八节流量爆发</li>
+                <li>内容建议：春日限定 / 鲜切现做 / 高颜值拍照打卡 / 闺蜜情侣必去</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <div class="info-title">龙户人家串串香 —— 推广主题</div>
+            <ul class="info-list">
+                <li>纯正社区串串 / 成都串串排队王 / 20多年老店口味在线</li>
+                <li>内容建议：牛肉系列现串 / 用餐人气体现 / 明星同款打卡 / 朴素真实推荐</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <div class="info-title">三缺一·成都味川菜（神仙树店）—— 传播重点</div>
+            <ul class="info-list">
+                <li>老牌成都味川菜 / 十多年老店本地人都在吃 / 小院川菜环境好</li>
+                <li>内容建议：突出环境优势（庭院川菜）+ 打造消费场景（生日/团建/宴请）</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 小红书全案营销案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>全案营销案例</h2>
+    <div class="case-study">
+        <div class="case-title">大院河·仙鱼莊 —— 绣球花季主题活动</div>
+        <div class="info-section" style="background: rgba(255,255,255,0.08); margin: 12px 0;">
+            <div class="info-title" style="color: #f4d03f;">1. 视觉符号升级</div>
+            <p style="color: rgba(255,255,255,0.85); font-size:15px;">融合中式院落与绣球花布景，强化品牌视觉记忆点，主题活动曝光破千万，单日排队破历史记录，实现从流量品牌到文化符号的升级</p>
+        </div>
+        <div class="info-section" style="background: rgba(255,255,255,0.08); margin: 12px 0;">
+            <div class="info-title" style="color: #f4d03f;">2. 场景革新</div>
+            <p style="color: rgba(255,255,255,0.85); font-size:15px;">推出绣球花季主题直播，极致性价比套餐，叠加肆季主题变换，兼顾消费者体验与沉浸感，进一步巩固品牌差异化竞争力</p>
+        </div>
+        <div class="case-highlight">实时热点检索 → 线上话题结合 → 绣球花季节点打造 → 糖酒会造节营销解构</div>
+    </div>
+    <div class="case-study" style="margin-top: 15px;">
+        <div class="case-title">南堂馆 —— 簪花宴春季限定活动</div>
+        <div class="info-section" style="background: rgba(255,255,255,0.08); margin: 12px 0;">
+            <div class="info-title" style="color: #f4d03f;">1. 春季限定场景</div>
+            <p style="color: rgba(255,255,255,0.85); font-size:15px;">优质内容矩阵+场景化种草，强化「春日簪花宴」高端文化属性，打造成都春季高端宴请/打卡首选目的地</p>
+        </div>
+        <div class="info-section" style="background: rgba(255,255,255,0.08); margin: 12px 0;">
+            <div class="info-title" style="color: #f4d03f;">2. 春季限定产品</div>
+            <p style="color: rgba(255,255,255,0.85); font-size:15px;">高性价比爆品套餐+平台流量工具，完成从「看笔记」到「买套餐」「到店消费」的闭环，实现销量破圈</p>
+        </div>
+        <div class="case-highlight">文化情感造点 + 视觉美学造点 + 爆品价值造点 → 声量破圈 × 销量破圈</div>
+    </div>
+</div>
+
+<!-- ==================== 第二部分：抖音视频 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h1 class="section-title">02 抖音视频营销</h1>
+    <p class="section-subtitle">DOUYIN VIDEO MARKETING</p>
+    <div style="text-align:center;"><span class="section-badge">短视频 · 探店 · 本地生活</span></div>
+</div>
+
+<!-- 抖音为什么重要 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>为什么餐饮品牌必须做抖音？</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="stat">8亿+</div>
+            <div class="stat-label">抖音日活用户<br>本地生活渗透率快速攀升</div>
+        </div>
+        <div class="card">
+            <div class="stat">4.2亿</div>
+            <div class="stat-label">抖音本地生活年度GMV<br>餐饮占比超60%</div>
+        </div>
+        <div class="card">
+            <div class="stat">3s</div>
+            <div class="stat-label">算法决策时间<br>前3秒决定用户是否停留</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>💡 核心逻辑</h3>
+        <p>抖音 = <strong>算法推荐</strong> × <strong>短视频冲击力</strong> × <strong>即时转化</strong><br>
+        与小红书的"主动搜索"不同，抖音的核心是<strong>算法推荐被动触达</strong>——用户刷着刷着就被种草，一条爆款视频可在24小时内带来数百桌到店</p>
+    </div>
+</div>
+
+<!-- 抖音营销方法论 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>丰火抖音营销方法论</h2>
+    <div class="formula">
+        <span class="formula-highlight">内容力</span> × <span class="formula-highlight">流量力</span> × <span class="formula-highlight">转化力</span> &nbsp;→&nbsp; 三力合一
+    </div>
+    <div class="method-grid">
+        <div class="method-item">
+            <div class="method-num">1</div>
+            <div class="method-name">内容力：爆款视频公式</div>
+            <div class="method-desc">黄金3秒钩子 + 情绪共鸣点 + 价值输出，配合节奏感剪辑，打造让用户"刷到就停不下来"的探店内容</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">2</div>
+            <div class="method-name">流量力：投流放大策略</div>
+            <div class="method-desc">DOU+加热优质内容，本地推精准圈选3-10公里范围人群，配合商圈定向+兴趣标签，让流量精准到店</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">3</div>
+            <div class="method-name">转化力：到店闭环设计</div>
+            <div class="method-desc">团购套餐+POI挂载+小程序跳转，从"看到"到"下单"只需3步，配合限时优惠制造紧迫感促转化</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">4</div>
+            <div class="method-name">达人矩阵策略</div>
+            <div class="method-desc">头部达人造势 + 腰部达人铺量 + 素人KOC种草，形成"大V推荐+真实用户背书"的信任链</div>
+        </div>
+    </div>
+</div>
+
+<!-- 抖音内容类型 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>抖音内容类型矩阵</h2>
+    <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card" style="text-align:center; padding:25px 18px;">
+            <div style="font-size:36px; margin-bottom:12px;">🎬</div>
+            <div style="font-size:18px; font-weight:700; color:#1a1a2e; margin-bottom:8px;">达人探店</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">头部/腰部达人到店拍摄<br>真实体验+强烈推荐<br>单条播放10W+起步</div>
+        </div>
+        <div class="card" style="text-align:center; padding:25px 18px;">
+            <div style="font-size:36px; margin-bottom:12px;">📱</div>
+            <div style="font-size:18px; font-weight:700; color:#1a1a2e; margin-bottom:8px;">品牌自播</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">商家号定期开播<br>后厨直播+套餐秒杀<br>零佣金直接转化</div>
+        </div>
+        <div class="card" style="text-align:center; padding:25px 18px;">
+            <div style="font-size:36px; margin-bottom:12px;">🔥</div>
+            <div style="font-size:18px; font-weight:700; color:#1a1a2e; margin-bottom:8px;">话题挑战赛</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">定制品牌话题标签<br>引导UGC内容创作<br>集中爆发品牌声量</div>
+        </div>
+    </div>
+    <div class="info-section" style="margin-top:20px;">
+        <div class="info-title">丰火抖音服务清单</div>
+        <ul class="info-list">
+            <li>达人筛选与对接——基于品牌调性精准匹配合适的探店达人</li>
+            <li>Brief策划与脚本撰写——确保视频内容方向、节奏与品牌调性一致</li>
+            <li>现场拍摄指导——到店跟拍，把控画面质感与信息传达</li>
+            <li>视频剪辑与发布——节奏感剪辑+热门BGM+话题标签优化</li>
+            <li>投流策略与执行——DOU+/本地推精准投放，放大优质内容</li>
+            <li>数据复盘与迭代——播放量/完播率/转化率全链路分析</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ==================== 第三部分：大众点评·点星 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h1 class="section-title">03 大众点评·点星</h1>
+    <p class="section-subtitle">DIANPING DIANXING</p>
+    <div style="text-align:center;"><span class="section-badge">智投笔记 · 到店转化 · 口碑沉淀</span></div>
+</div>
+
+<!-- 点星产品详情 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>点星：智投笔记</h2>
+    <div class="brief-case">
+        <div class="info-section">
+            <div class="info-title">产品定位</div>
+            <p>大众点评官方推出的本地生活商家内容营销解决方案，通过达人种草笔记+智能投放，帮助商家精准触达目标用户，实现从种草到到店消费的完整闭环</p>
+        </div>
+        <div class="info-section">
+            <div class="info-title">核心能力</div>
+            <ul class="info-list">
+                <li>智能匹配达人——基于门店画像精准推荐适配博主</li>
+                <li>笔记内容生产——专业Brief指导，保障内容质量与品牌调性</li>
+                <li>流量加速投放——聚光投流+搜索SEO，笔记持续获得精准曝光</li>
+                <li>全链路数据追踪——从曝光→种草→到店，全程可量化</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <div class="info-title">适用场景</div>
+            <div class="tag-list">
+                <span class="tag">新店开业引流</span>
+                <span class="tag">节庆活动造势</span>
+                <span class="tag">爆款套餐推广</span>
+                <span class="tag">品牌声量提升</span>
+                <span class="tag">老店焕新种草</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 点星核心优势 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>点星核心优势</h2>
+    <div class="method-grid">
+        <div class="method-item">
+            <div class="method-num">1</div>
+            <div class="method-name">消费决策终极收口</div>
+            <div class="method-desc">用户在抖音/小红书被种草后，最终会来点评查评价、看评分。点星笔记出现在搜索结果和推荐信息流中，拦截"最后一跳"决策</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">2</div>
+            <div class="method-name">真实评价口碑背书</div>
+            <div class="method-desc">点星达人以真实消费者身份发布体验笔记，内容风格接近自然评价，可信度远高于广告，有效提升门店口碑评分</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">3</div>
+            <div class="method-name">到店转化直接闭环</div>
+            <div class="method-desc">笔记直接关联门店POI，用户点击即可查看门店详情、购买团购套餐、预约到店，从种草到消费无缝衔接</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">4</div>
+            <div class="method-name">数据驱动效果可量化</div>
+            <div class="method-desc">从曝光量→种草量→到店核销，全链路数据实时可见，每一分钱花在哪里、带来多少到店，清清楚楚</div>
+        </div>
+    </div>
+</div>
+
+<!-- 点星履约流程 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>点星下单 & 履约流程</h2>
+    <div class="process-step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+            <div class="step-title">选择活动包</div>
+            <div class="step-desc">在开店宝后台选择对应的活动包（如春日赏樱活动包、品牌专属定制包等），确认投放预算与周期</div>
+        </div>
+    </div>
+    <div class="process-step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+            <div class="step-title">提交订单</div>
+            <div class="step-desc">完成订单支付，丰火团队介入制定内容策略，撰写达人Brief，规划内容方向与话题标签</div>
+        </div>
+    </div>
+    <div class="process-step">
+        <span class="step-number">3</span>
+        <div class="step-content">
+            <div class="step-title">达人匹配与到店</div>
+            <div class="step-desc">系统智能匹配+人工精选适配达人，达人到店探店体验，按Brief执行内容拍摄与发布</div>
+        </div>
+    </div>
+    <div class="process-step">
+        <span class="step-number">4</span>
+        <div class="step-content">
+            <div class="step-title">效果追踪与复盘</div>
+            <div class="step-desc">实时监控投放效果，曝光/种草/交易数据全程可见，定期输出效果报告，策略持续优化迭代</div>
+        </div>
+    </div>
+</div>
+
+<!-- 点星案例数据总览 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>点星案例数据</h2>
+    <div class="grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom:25px;">
+        <div class="card" style="text-align:center; padding:35px 20px;">
+            <div class="stat" style="font-size:56px;">5亿</div>
+            <div class="stat-label" style="font-size:16px;">笔记总浏览量</div>
+        </div>
+        <div class="card" style="text-align:center; padding:35px 20px;">
+            <div class="stat" style="font-size:56px;">300W+</div>
+            <div class="stat-label" style="font-size:16px;">总种草量</div>
+        </div>
+        <div class="card" style="text-align:center; padding:35px 20px;">
+            <div class="stat" style="font-size:56px;">1000家</div>
+            <div class="stat-label" style="font-size:16px;">合作门店</div>
+        </div>
+    </div>
+    <div class="highlight-box" style="margin-top:10px;">
+        <h3>📊 数据亮点</h3>
+        <p>单篇笔记最高曝光 <strong>1354.6万</strong> ｜ 平均种草转化率 <strong>6.8%</strong> ｜ 单店最高月交易额 <strong>16W+</strong></p>
+    </div>
+    <div class="method-grid" style="margin-top:20px;">
+        <div class="method-item">
+            <div class="method-num">1</div>
+            <div class="method-name">曝光效率行业领先</div>
+            <div class="method-desc">点星智投笔记平均曝光量达37.5万/篇，远超行业均值15万/篇</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">2</div>
+            <div class="method-name">种草到交易闭环高效</div>
+            <div class="method-desc">从笔记曝光→种草→到店核销，全链路转化率持续优化，ROI可达1:5以上</div>
+        </div>
+    </div>
+</div>
+
+<!-- 平台活动品牌案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>平台活动品牌案例</h2>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">孚乐里音乐西餐酒吧（来福士店）</span>
+            <span class="case-compact-type">平台活动</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">53W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">125篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">1.6W+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">10W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">龙户人家串串香</span>
+            <span class="case-compact-type">平台活动</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">53W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">125篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">1.2W+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">12W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">悦百味·品质川菜（悠方店）</span>
+            <span class="case-compact-type">平台活动</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">20W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">45篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">5400+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">3W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- 智投笔记品牌案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>智投笔记品牌案例</h2>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">南堂馆·新川菜（IFS店）</span>
+            <span class="case-compact-type">智投笔记</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">44W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">80篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">1.4W+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">14W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">雍容荟·活波龙自助餐（武汉恒隆黑金店）</span>
+            <span class="case-compact-type">智投笔记</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">37W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">20篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">1.9W+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">16W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">雍容荟·活波龙自助餐（罗湖万象城黑金店）</span>
+            <span class="case-compact-type">智投笔记</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">25W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">20篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">9K+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">15W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">MUSE·悦荟（中国华商店）</span>
+            <span class="case-compact-type">智投笔记</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">36W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">38篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">1.2W+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">6W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- 更多案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>更多品牌案例</h2>
+    <div class="case-compact">
+        <div class="case-compact-header">
+            <span class="case-compact-name">观锦餐厅（天廊店&天府新谷店&德商国际店）</span>
+            <span class="case-compact-type">智投笔记</span>
+        </div>
+        <div class="case-compact-stats">
+            <div class="case-compact-stat"><div class="val">18W+</div><div class="lbl">累计曝光</div></div>
+            <div class="case-compact-stat"><div class="val">20篇</div><div class="lbl">发布笔记</div></div>
+            <div class="case-compact-stat"><div class="val">6K+</div><div class="lbl">种草量</div></div>
+            <div class="case-compact-stat"><div class="val">7W+</div><div class="lbl">线上交易</div></div>
+        </div>
+    </div>
+    <div class="info-section" style="margin-top: 22px;">
+        <div class="info-title">话题案例亮点</div>
+        <ul class="info-list">
+            <li>FOOOO CITY CLUB 专属定制话题浏览量达 1354.6万 / 2894.9万 / 583.4万</li>
+            <li>龙户人家串串香话题活动种草量1.2W+，交易金额12W+，有效增加门店曝光及种草率</li>
+            <li>孚乐里、享月汤皇、听香·老公馆川菜等商家通过定制话题，有效增加门店曝光及种草量</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ==================== 公司介绍 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h1 class="section-title">关于四川丰火</h1>
+    <p class="section-subtitle">SICHUAN FENGHUO MEDIA</p>
+</div>
+
+<!-- 公司介绍 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>选择四川丰火</h2>
+    <div class="brief-case">
+        <div class="highlight-box" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); color: #fff;">
+            <h2 style="color: #d4af37; border:none; padding:0; margin:0 0 10px 0;">让您的品牌在信息的海洋中，成为最亮的那座灯塔！</h2>
+            <p style="font-size: 18px; line-height: 1.8; opacity:0.9;">深耕餐饮本地生活内容营销，以小红书种草+抖音引爆+点星转化，为品牌构建全链路营销闭环</p>
+        </div>
+        <div class="info-section">
+            <div class="info-title">核心服务</div>
+            <ul class="info-list">
+                <li>小红书全案运营——从账号搭建到数据闭环，一站式搞定</li>
+                <li>抖音视频营销——达人探店+短视频创作+本地生活投流</li>
+                <li>大众点评·点星——智投笔记+到店转化+口碑沉淀</li>
+                <li>品牌营销策划——品牌定位、视觉符号、活动策划</li>
+                <li>内容创作与投放——Brief策划、达人对接、投流优化</li>
+                <li>线下活动执行——主题活动策划与落地执行</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 合作品牌墙 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>合作品牌墙</h2>
+    <p style="color:#666; margin-bottom:20px; font-size:15px;">四川丰火传媒已服务超过100+餐饮品牌，覆盖火锅/串串/川菜/泰餐/西餐/自助等全品类</p>
+    <div class="brand-wall">
+        <div class="brand-wall-img">
+            <img src="assets/合作品牌墙1.png" alt="合作品牌墙1">
+        </div>
+        <div class="brand-wall-img">
+            <img src="assets/合作品牌墙2.png" alt="合作品牌墙2">
+        </div>
+    </div>
+</div>
+
+<!-- 小红书爆文案例 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>小红书爆文案例 TOP 13 <span class="click-tip">👆 点击标题可跳转至小红书查看</span></h2>
+    <p style="color:#666; margin-bottom:15px; font-size:14px;">以下为丰火操盘/合作的小红书爆款笔记，点击标题可直接跳转查看原文</p>
+    <div style="overflow-x:auto;">
+    <table class="hot-table">
+        <thead>
+            <tr>
+                <th style="min-width:320px;">笔记标题</th>
+                <th>👍 点赞</th>
+                <th>⭐ 收藏</th>
+                <th>💬 评论</th>
+                <th>🔗 转发</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="hot-num top3">1</span><a class="hot-title" href="http://xhslink.com/o/32sUIYh6v4b" target="_blank">成都三圣乡！！真的好震撼！！😭😭</a></td>
+                <td><span class="like-cell like-super">3.2W</span></td>
+                <td>1.8W</td>
+                <td>2400+</td>
+                <td>860+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num top3">2</span><a class="hot-title" href="http://xhslink.com/o/6z90L4rUDqJ" target="_blank">在成都。。。花的蕞值的一笔钱。。。。</a></td>
+                <td><span class="like-cell like-super">2.8W</span></td>
+                <td>1.5W</td>
+                <td>1800+</td>
+                <td>620+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num top3">3</span><a class="hot-title" href="http://xhslink.com/o/5Tj8FIxyMxs" target="_blank">庭院船上吃荷花宴……这居然是成都鱼火锅！</a></td>
+                <td><span class="like-cell like-high">1.6W</span></td>
+                <td>8200+</td>
+                <td>1100+</td>
+                <td>430+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">4</span><a class="hot-title" href="http://xhslink.com/o/A87o5MvUhJe" target="_blank">没去江南，成都三圣乡，周末绝美打卡圣地...</a></td>
+                <td><span class="like-cell like-high">1.3W</span></td>
+                <td>6800+</td>
+                <td>920+</td>
+                <td>380+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">5</span><a class="hot-title" href="http://xhslink.com/o/2gFME924Eqp" target="_blank">为了这扇窗，来了宽窄巷子无数次！！！</a></td>
+                <td><span class="like-cell like-high">1.1W</span></td>
+                <td>5600+</td>
+                <td>780+</td>
+                <td>340+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">6</span><a class="hot-title" href="http://xhslink.com/o/1s9MLcmm0Cm" target="_blank">成都果然是大城市啊。。。。。。。</a></td>
+                <td><span class="like-cell like-mid">8600+</span></td>
+                <td>4200+</td>
+                <td>650+</td>
+                <td>280+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">7</span><a class="hot-title" href="http://xhslink.com/o/AbwyenbYr7o" target="_blank">成都火锅已经卷成艺术馆了！新年请客倍有面！</a></td>
+                <td><span class="like-cell like-mid">7800+</span></td>
+                <td>3900+</td>
+                <td>520+</td>
+                <td>210+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">8</span><a class="hot-title" href="http://xhslink.com/o/3qtMQiSQwYV" target="_blank">只有川渝人才懂这一口的含金量啊！！！！</a></td>
+                <td><span class="like-cell like-mid">6500+</span></td>
+                <td>3200+</td>
+                <td>480+</td>
+                <td>190+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">9</span><a class="hot-title" href="http://xhslink.com/o/8ZTAujglgu1" target="_blank">成都宽窄巷子！绝美中式美学火锅🍃超有意境～</a></td>
+                <td><span class="like-cell like-mid">5800+</span></td>
+                <td>2900+</td>
+                <td>420+</td>
+                <td>170+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">10</span><a class="hot-title" href="http://xhslink.com/o/4uhEIqnUvW" target="_blank">父母以为的火锅vs实际上我吃的</a></td>
+                <td><span class="like-cell like-mid">5200+</span></td>
+                <td>2600+</td>
+                <td>380+</td>
+                <td>150+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">11</span><a class="hot-title" href="http://xhslink.com/o/AMGlvSoSz5h" target="_blank">发给你最好的朋友看，然后关机去睡觉💤</a></td>
+                <td><span class="like-cell like-low">4200+</span></td>
+                <td>2100+</td>
+                <td>320+</td>
+                <td>130+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">12</span><a class="hot-title" href="http://xhslink.com/o/4N9ygSrOotM" target="_blank">91💰一碗白米饭？？？让我开眼了。。。😅😅</a></td>
+                <td><span class="like-cell like-low">3800+</span></td>
+                <td>1800+</td>
+                <td>290+</td>
+                <td>110+</td>
+            </tr>
+            <tr>
+                <td><span class="hot-num normal">13</span><a class="hot-title" href="http://xhslink.com/o/5ePWGUBIAgS" target="_blank">好伟大的川菜拌饭！！！！！</a></td>
+                <td><span class="like-cell like-low">3200+</span></td>
+                <td>1600+</td>
+                <td>250+</td>
+                <td>90+</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p style="color:#999; font-size:12px; margin-top:12px; text-align:right;">* 互动数据为采集时点快照，实际数据可能更高</p>
+</div>
+
+<!-- 爆文数据汇总 -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <h2>爆文案例思路解析</h2>
+    <div class="highlight-box">
+        <h3>🔥 爆文密码</h3>
+        <p>高频爆文共性：<strong>情绪共鸣（😭/！！/震惊）</strong> + <strong>场景反差（荷花宴/艺术馆/91元白米饭）</strong> + <strong>地域认同（成都/川渝）</strong><br>
+        前3秒定生死——标题就是最好的钩子！</p>
+    </div>
+    <div class="method-grid" style="margin-top:20px;">
+        <div class="method-item">
+            <div class="method-num">1</div>
+            <div class="method-name">情绪驱动型</div>
+            <div class="method-desc">用"真的好震撼😭😭""含金量啊！！"等强情绪表达，触发用户共鸣冲动点赞</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">2</div>
+            <div class="method-name">场景反差型</div>
+            <div class="method-desc">"船上吃荷花宴""火锅卷成艺术馆"——制造认知落差，让用户忍不住点进来看</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">3</div>
+            <div class="method-name">地域认同型</div>
+            <div class="method-desc">"成都果然是大城市""川渝人才懂"——激发本地人自豪感+外地人好奇心</div>
+        </div>
+        <div class="method-item">
+            <div class="method-num">4</div>
+            <div class="method-name">悬念钩子型</div>
+            <div class="method-desc">"91💰一碗白米饭？？？""花的蕞值的一笔钱"——好奇心缺口驱使用户必须点开</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 结束页 ==================== -->
+<div class="slide">
+    <div class="watermark-layer"></div>
+    <div class="cover">
+        <h1 style="font-size: 52px;">感谢观看</h1>
+        <p class="subtitle">四川丰火传媒</p>
+        <p class="tagline" style="margin-top:30px;">小红书 · 抖音视频 · 大众点评·点星</p>
+    </div>
+</div>
+
+</body>
+</html>
